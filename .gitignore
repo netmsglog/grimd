@@ -1,2 +1,6 @@
 .vscode
 *.sqlite
+grimd
+grimd.toml
+*.list
+*.log

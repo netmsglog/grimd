@@ -147,7 +147,10 @@ func (h *DNSHandler) do(config *Config, blockCache *MemoryBlockCache, questionCa
 			if IPQuery > 0 {
 				blacklisted = blockCache.Exists(Q.Qname)
 
-				if grimdActive && blacklisted {
+				qs := strings.ToLower(Q.Qname)
+				qsExpress := wordsBanned.Match(qs)
+
+				if grimdActive && (qsExpress || blacklisted) {
 					m := new(dns.Msg)
 					m.SetReply(req)
 

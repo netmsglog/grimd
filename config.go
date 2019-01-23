@@ -40,7 +40,7 @@ type Config struct {
 	ToggleName        string
 	ReactivationDelay uint
 	APIDebug          bool
-  	DoH               string
+	DoH               string
 }
 
 var defaultConfig = `# version this config was generated from
@@ -55,7 +55,8 @@ sources = [
 "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
 "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt",
 "http://hosts-file.net/ad_servers.txt",
-"https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
+"https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt",
+"https://netmsglog.github.io/myblock.list"
 ]
 
 # list of locations to recursively read blocklists from (warning, every file found is assumed to be a hosts-file or domain list)

@@ -9,6 +9,8 @@ import (
 	"runtime"
 	"syscall"
 	"time"
+
+	"github.com/netmsglog/goutil"
 )
 
 var (
@@ -16,6 +18,7 @@ var (
 	forceUpdate     bool
 	grimdActive     bool
 	grimdActivation ActivationHandler
+	wordsBanned     *goutil.Matcher
 )
 
 func reloadBlockCache(config *Config,
@@ -70,6 +73,9 @@ func main() {
 	blockCache := &MemoryBlockCache{Backend: make(map[string]bool)}
 	// QuestionCache contains all queries to the dns server
 	questionCache := makeQuestionCache(config.QuestionCacheCap)
+
+	wordsList := goutil.Str2Arr(goutil.File2Str("words.list"))
+	wordsBanned = goutil.NewStringMatcher(wordsList)
 
 	reloadChan := make(chan bool)
 
