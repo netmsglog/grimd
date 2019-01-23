@@ -9,13 +9,14 @@ require (
 	github.com/jonboulle/clockwork v0.1.0
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/miekg/dns v1.0.15
+	github.com/netmsglog/goutil v0.0.0-20190122183522-db5ee6bb32a3
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/ryanuber/go-glob v0.0.0-20170128012129-256dc444b735
 	github.com/stretchr/testify v1.2.2
 	github.com/ugorji/go/codec v0.0.0-20181022190402-e5e69e061d4f // indirect
 	golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16 // indirect
-	golang.org/x/net v0.0.0-20181102091132-c10e9556a7bc // indirect
+	golang.org/x/net v0.0.0-20190119204137-ed066c81e75e // indirect
 	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect
 	golang.org/x/sys v0.0.0-20181031143558-9b800f95dbbc // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
