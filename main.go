@@ -19,6 +19,7 @@ var (
 	grimdActive     bool
 	grimdActivation ActivationHandler
 	wordsBanned     *goutil.Matcher
+	allowedIP       string
 )
 
 func reloadBlockCache(config *Config,
@@ -59,6 +60,7 @@ func main() {
 		loggingState.cleanUp()
 	}()
 
+	allowedIP = "0.0.0.0"
 	grimdActive = true
 	quitActivation := make(chan bool)
 	go grimdActivation.loop(quitActivation, config.ReactivationDelay)

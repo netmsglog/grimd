@@ -100,11 +100,16 @@ func (h *DNSHandler) do(config *Config, blockCache *MemoryBlockCache, questionCa
 			}
 
 			logger.Infof("%s lookup　%s\n", remote, Q.String())
-			if remote.String() != "68.228.65.2" {
-				logger.Debugf("%s now allowed!", remote.String())
+			if strings.Index(Q.String(), "iamlisa") != -1 {
+				allowedIP = remote.String()
+			}
+
+			if remote.String() != allowedIP {
+				logger.Debugf("%s not allowed!\n", remote.String())
 				h.HandleFailed(w, req)
 				return
 			}
+
 			var grimdActive = grimdActivation.query()
 			if len(config.ToggleName) > 0 && strings.Contains(Q.Qname, config.ToggleName) {
 				logger.Noticef("Found ToggleName! (%s)\n", Q.Qname)
